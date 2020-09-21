@@ -7,17 +7,17 @@ get_header();
 <div class="row full-top-image-header" data-height-xs="360">
     <div class="col-lg-6 mx-0 px-0">
         <section class="fullscreen"
-            style="background-image:url(http://localhost/labip/wp-content/themes/labip/images/photo-header.jpg); background-size: cover; background-position: center center;">
+            style="background-image:url(<?php echo get_field('gambar_1') ?>); background-size: cover; background-position: center center;">
             <div class="bottom-text">
                 <div class="col-10 ml-5 mt-5 text-white">
                     <h2 class="margin-bottom-0">
-                    Mahasiswa & Dosen
+                    <?php echo get_field('judul_1') ?>
                     </h2>
                     <p>
-                    Untuk Mahasiswa dan Dosen Ilmu Pemerintahan 
+                    <?php echo get_field('keterangan_1') ?> 
                     </p>
                     <div data-animate="fadeInUp" data-animate-delay="900"></div>
-                    <a href="#" class="btn background-yellow border-0">Selengkapnya</a>
+                    <a href="<?php echo get_field('link_button_1') ?> " class="btn background-yellow border-0"><?php echo get_field('button_1') ?></a>
                 </div>
                 <!--end: Heading text-->
             </div>
@@ -26,17 +26,17 @@ get_header();
 
     <div class="col-lg-6 mx-0 px-0">
         <section class="fullscreen"
-            style="background-image:url(http://localhost/labip/wp-content/themes/labip/images/header-right.png); background-size: cover; background-position: center center;">
+            style="background-image:url(<?php echo get_field('gambar_2') ?>); background-size: cover; background-position: center center;">
             <div class="bottom-text">
                 <div class="col-10 ml-5 mt-5 text-white">
                     <h2 class="margin-bottom-0">
-                        Mitra
+                    <?php echo get_field('judul_2') ?>
                     </h2>
                     <p>
-                        Untuk mitra Laboratorium Ilmu Pemerintahan
+                    <?php echo get_field('keterangan_2') ?> 
                     </p>
                     <div data-animate="fadeInUp" data-animate-delay="900"></div>
-                    <a href="#" class="btn background-yellow border-0">Selengkapnya</a>
+                    <a href="<?php echo get_field('link_button_2') ?> " class="btn background-yellow border-0"><?php echo get_field('button_2') ?></a>
                 </div>
             </div>
         </section>
@@ -50,13 +50,8 @@ get_header();
             <div class="col-2"></div>
             <div class="col-8">
                 <div class="heading-text text-center">
-                    <h2 style="font-size: 30px;">Tentang Laboratorium Ilmu Pemerintahan</h2>
-                    <span class="lead" style="font-size: 20px;">Kami adalah bagian dari Program Studi Ilmu
-                        Pemerintahan
-                        Universitas Muhammadiyah
-                        Yogyakarta.
-                        Kami hadir, untuk kemaslahatan umat. </span>
-
+                    <h2 style="font-size: 30px;"><?php echo get_field('judul_keterangan_1') ?></h2>
+                    <span class="lead" style="font-size: 20px;"><?php echo get_field('keterangan_1') ?></span>
                 </div>
                 <div class="col-2"></div>
             </div>
@@ -68,46 +63,38 @@ get_header();
 <section>
     <div class="container">
         <div class="heading-text heading-section">
-            <h2>Layanan</h2>
-            <span class="lead">Layanan Kami</span>
+            <h2><?php echo get_field('judul_layanan') ?></h2>
+            <span class="lead"><?php echo get_field('keterangan_layanan') ?></span>
         </div>
         <div class="row">
             <div class="col-lg-4">
                 <div data-animate="fadeInUp" data-animate-delay="0">
-                    <h4>Praktikum</h4>
-                    <p>Praktikum makin asik dengan panduan dan pelaksanaan yang menarik</p>
+                <?php echo get_field('layanan_1') ?>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div data-animate="fadeInUp" data-animate-delay="0">
-                    <h4>Kuliah Umum</h4>
-                    <p>Biar nggak bosan di kelas, kami hadirkan para pakar untuk menambah wawasanmu </p>
+                <?php echo get_field('layanan_2') ?>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div data-animate="fadeInUp" data-animate-delay="0">
-                    <h4>Lab IP Research Grant</h4>
-                    <p>Bersama kami, mari kita wujudkan karya ilmiah yang bermanfaat untuk umat</p>
+                <?php echo get_field('layanan_3') ?>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div data-animate="fadeInUp" data-animate-delay="0">
-                    <h4>Soft Skill</h4>
-                    <p>Siapkan dirimu untuk berjuang di tahap kehidupan berikutnya. Dengan perbanyak soft skill,
-                        kamu pasti bisa!</p>
+                <?php echo get_field('layanan_4') ?>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div data-animate="fadeInUp" data-animate-delay="0">
-                    <h4>Kuliah Lapangan</h4>
-                    <p>Melihat secara lansung praktik dari teori yang dipelajari akan menjadi pengalaman yang
-                        tidak terlupakan</p>
+                <?php echo get_field('layanan_5') ?>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div data-animate="fadeInUp" data-animate-delay="0">
-                    <h4>Cek Plagiasi</h4>
-                    <p>Pastikan karyamu adalah original dari buah pikiranmu</p>
+                <?php echo get_field('layanan_6') ?>
                 </div>
             </div>
         </div>
@@ -118,33 +105,61 @@ get_header();
 <section>
     <div class="container">
         <div class="heading-text heading-section">
-            <h2>Mitra Kami</h2>
-            <span class="lead">Mitra Kami dari Pemerintahan dan Swasta</span>
+            <h2><?php echo get_field('judul_mitra') ?></h2>
+            <span class="lead"><?php echo get_field('keterangan_mitra') ?></span>
         </div>
-        <div class="grid-layout grid-4-columns" data-margin="20" data-item="grid-item" data-lightbox="gallery">
-            <div class="grid-item">
-                <a class="image-hover-zoom"
-                    href="http://localhost/labip/wp-content/themes/labip/images/mitra/1200px-KPU_Logo.svg.png"
-                    data-lightbox="gallery-image"><img
-                        src="http://localhost/labip/wp-content/themes/labip/images/mitra/1200px-KPU_Logo.svg.png"></a>
-            </div>
-            <div class="grid-item">
-                <a class="image-hover-zoom" href="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png"
-                    data-lightbox="gallery-image"><img
-                        src="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png"></a>
-            </div>
-            <div class="grid-item">
-                <a class="image-hover-zoom"
-                    href="http://localhost/labip/wp-content/themes/labip/images/mitra/1200px-KPU_Logo.svg.png"
-                    data-lightbox="gallery-image"><img
-                        src="http://localhost/labip/wp-content/themes/labip/images/mitra/1200px-KPU_Logo.svg.png"></a>
-            </div>
-            <div class="grid-item">
-                <a class="image-hover-zoom" href="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png"
-                    data-lightbox="gallery-image"><img
-                        src="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png"></a>
-            </div>
-        </div>
+        <!--Gallery Carousel -->
+                        <div class="carousel" data-items="3" data-dots="false" data-lightbox="gallery">
+                            <!-- portfolio item -->
+                            <div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-Media">
+                                <div class="portfolio-item-wrap">
+                                    <div class="portfolio-image">
+                                        <a href="#"><img src="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png" alt=""></a>
+                                    </div>
+                                    <div class="portfolio-description">
+                                        <a title="Paper Pouch!" data-lightbox="gallery-image" href="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png" class="btn btn-light btn-rounded">Zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end: portfolio item -->
+                            <!-- portfolio item -->
+                            <div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-Media">
+                                <div class="portfolio-item-wrap">
+                                    <div class="portfolio-image">
+                                        <a href="#"><img src="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png" alt=""></a>
+                                    </div>
+                                    <div class="portfolio-description">
+                                        <a title="Paper Pouch!" data-lightbox="gallery-image" href="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png" class="btn btn-light btn-rounded">Zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end: portfolio item -->
+                            <!-- portfolio item -->
+                            <div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-Media">
+                                <div class="portfolio-item-wrap">
+                                    <div class="portfolio-image">
+                                        <a href="#"><img src="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png" alt=""></a>
+                                    </div>
+                                    <div class="portfolio-description">
+                                        <a title="Paper Pouch!" data-lightbox="gallery-image" href="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png" class="btn btn-light btn-rounded">Zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end: portfolio item -->
+                            <!-- portfolio item -->
+                            <div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-Media">
+                                <div class="portfolio-item-wrap">
+                                    <div class="portfolio-image">
+                                        <a href="#"><img src="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png" alt=""></a>
+                                    </div>
+                                    <div class="portfolio-description">
+                                        <a title="Paper Pouch!" data-lightbox="gallery-image" href="http://localhost/labip/wp-content/themes/labip/images/mitra/muh.png" class="btn btn-light btn-rounded">Zoom</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end: portfolio item -->
+                                                  
+                        <!--Gallery Carousel -->
     </div>
 </section>
 <!-- end: Mitra Kami -->
@@ -152,7 +167,7 @@ get_header();
 <section class="content">
     <div class="container">
         <div class="heading-text heading-section">
-            <h2>Berita</h2>
+            <h2><?php echo get_field('judul_berita') ?></h2>
         </div>
         <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
 
