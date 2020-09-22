@@ -117,7 +117,7 @@ get_header();
 <section class="content">
     <div class="container">
         <div class="heading-text heading-section">
-            <h2>Berita</h2>
+            <h2><?php echo get_field('judul_judul_berita') ?></h2>
         </div>
         <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
         <?php the_berita(); ?>
