@@ -2609,6 +2609,7 @@ Main Menu: Responsive
     border: 0;
   }
   #mainMenu:not(.menu-overlay) nav > ul > li > a {
+    color: #3d3d3d!important;
     display: block;
     padding: 12px 0;
     font-size: 14px;
@@ -8928,7 +8929,7 @@ Helpers
 }
 
 .background-black {
-  background-color: #000 !important;
+  background-color: #3d3d3d !important;
 }
 
 .background-pattern {

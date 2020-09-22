@@ -261,131 +261,113 @@ function the_mitra()
 {
 
 ?>
-	<div class="container">
-		<div class="heading-text heading-section">
-			<h2><?php echo get_field('judul_mitra') ?></h2>
-			<span class="lead"><?php echo get_field('keterangan_mitra') ?></span>
-		</div>
-		<!--Gallery Carousel -->
+	<?php
+	$args = array(
+		'post_status'   => 'publish',
+		'post_type'     => 'mitra',
+		'posts_per_page' => 4,
+	);
 
-		<?php
-		$args = array(
-			'post_status'   => 'publish',
-			'post_type'     => 'mitra',
-			'posts_per_page' => 4,
-		);
-
-		$the_query = null;
-		$the_query = new WP_Query();
-		$the_query->query($args);
-		while ($the_query->have_posts()) : $the_query->the_post();
-		?>
+	$the_query = null;
+	$the_query = new WP_Query();
+	$the_query->query($args);
+	while ($the_query->have_posts()) : $the_query->the_post();
+	?>
 
 
-			<div class="carousel" data-items="3" data-dots="false" data-lightbox="gallery">
-				<!-- portfolio item -->
-				<div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-Media">
-					<div class="portfolio-item-wrap">
-						<div class="portfolio-image">
-							<a href="#">
-								<?php
-								if (has_post_thumbnail()) {
-									the_post_thumbnail('thumbnail-square');
-								} else {
-								?>
-									<img src="<?php bloginfo('template_directory'); ?>/images/blog/17.jpg" alt="<?php the_title(); ?>">
-								<?php
-								}
-								?>
-							</a>
-						</div>
-						<div class="portfolio-description">
+		<div class="carousel" data-items="3" data-dots="false" data-lightbox="gallery">
+			<!-- portfolio item -->
+			<div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-Media">
+				<div class="portfolio-item-wrap">
+					<div class="portfolio-image">
+						<a href="#">
 							<?php
 							if (has_post_thumbnail()) {
-							?>
-								<a title="<?php the_title(); ?>" data-lightbox="gallery-image" href="<?php the_post_thumbnail_url(); ?>" class="btn btn-light btn-rounded">Zoom</a>
-							<?php
+								the_post_thumbnail('thumbnail-square');
 							} else {
 							?>
-								<a title="<?php the_title(); ?>" data-lightbox="gallery-image" href="<?php bloginfo('template_directory'); ?>/images/blog/17.jpg" class="btn btn-light btn-rounded">Zoom</a>
+								<img src="<?php bloginfo('template_directory'); ?>/images/blog/17.jpg" alt="<?php the_title(); ?>">
 							<?php
 							}
 							?>
-						</div>
+						</a>
+					</div>
+					<div class="portfolio-description">
+						<?php
+						if (has_post_thumbnail()) {
+						?>
+							<a title="<?php the_title(); ?>" data-lightbox="gallery-image" href="<?php the_post_thumbnail_url(); ?>" class="btn btn-light btn-rounded">Zoom</a>
+						<?php
+						} else {
+						?>
+							<a title="<?php the_title(); ?>" data-lightbox="gallery-image" href="<?php bloginfo('template_directory'); ?>/images/blog/17.jpg" class="btn btn-light btn-rounded">Zoom</a>
+						<?php
+						}
+						?>
 					</div>
 				</div>
-				<!-- end: portfolio item -->
-				<!--Gallery Carousel -->
 			</div>
-		<?php endwhile;
-		$wp_query = null; ?>
-	</div>
+			<!-- end: portfolio item -->
+			<!--Gallery Carousel -->
+		</div>
+	<?php endwhile;
+	$wp_query = null; ?>
 
 
 <?php
 
 }
 
-function the_berita(){
-	?>
-	<section class="content">
-    <div class="container">
-        <div class="heading-text heading-section">
-            <h2>Berita</h2>
-        </div>
-        <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
+function the_berita()
+{
+?>
+		<?php
 
-            <?php
+		$args = array(
 
-            $args = array(
+			'post_type' => 'post',
+			'posts_per_page' => 4
+		);
 
-                'post_type' => 'post',
-                'posts_per_page' => 4
-            );
+		$_posts =  new WP_Query($args);
 
-            $_posts =  new WP_Query($args);
+		?>
 
-            ?>
-
-            <?php if ($_posts->have_posts()) : ?>
+		<?php if ($_posts->have_posts()) : ?>
 
 
 
-                <?php while ($_posts->have_posts()) : $_posts->the_post(); ?>
+			<?php while ($_posts->have_posts()) : $_posts->the_post(); ?>
 
-                    <div class="post-item border">
-                        <div class="post-item-wrap">
-                            <div class="post-image">
-                                <a href="#">
-                                    <img alt="" src="<?php the_post_thumbnail_url(); ?>">
-                                </a>
-                            </div>
-                            <div class="post-item-description">
-                                <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo get_the_date('Y-m-d'); ?></span>
-                                <h2><a href="<?php the_permalink(); ?>" class="text-green">
-                                        <?php
+				<div class="post-item border">
+					<div class="post-item-wrap">
+						<div class="post-image">
+							<a href="#">
+								<img alt="" src="<?php the_post_thumbnail_url(); ?>">
+							</a>
+						</div>
+						<div class="post-item-description">
+							<span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo get_the_date('Y-m-d'); ?></span>
+							<h2><a href="<?php the_permalink(); ?>" class="text-green">
+									<?php
 
-                                        the_title();
+									the_title();
 
-                                        ?>
-                                    </a></h2>
-                                <p>
-                                    <?php
-                                    echo the_excerpt();
-                                    ?>
-                            </div>
-                        </div>
-                    </div>
-
-
-                <?php endwhile; ?>
+									?>
+								</a></h2>
+							<p>
+								<?php
+								echo the_excerpt();
+								?>
+						</div>
+					</div>
+				</div>
 
 
-            <?php endif; ?>
+			<?php endwhile; ?>
 
-        </div>
-    </div>
-</section>
-	<?php
+
+		<?php endif; ?>
+<?php
 }
 ?>

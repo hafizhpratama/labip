@@ -1,7 +1,5 @@
 <?php
-
 get_header();
-
 ?>
 <!-- SECTION IMAGE FULLSCREEN -->
 <div class="row full-top-image-header" data-height-xs="360">
@@ -101,15 +99,31 @@ get_header();
 <!-- end: PORTFOLIO -->
 <!-- Mitra Kami -->
 <section>
-    <?php
-    
-    the_mitra();
+    <div class="container">
+        <div class="heading-text heading-section">
+            <h2><?php echo get_field('judul_mitra') ?></h2>
+            <span class="lead"><?php echo get_field('keterangan_mitra') ?></span>
+        </div>
+        <!--Gallery Carousel -->
+        <?php
 
-    ?>
+        the_mitra();
+
+        ?>
+    </div>
 </section>
 <!-- end: Mitra Kami -->
 <!-- BLOG -->
-<?php the_berita(); ?>
+<section class="content">
+    <div class="container">
+        <div class="heading-text heading-section">
+            <h2>Berita</h2>
+        </div>
+        <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
+        <?php the_berita(); ?>
+        </div>
+    </div>
+</section>
 <!-- end: BLOG -->
 <?php
 get_footer();

@@ -1,4 +1,3 @@
-<?php /* Template Name: Berita */ ?>
 <?php
 
 get_header();

@@ -22,9 +22,15 @@
             background: #FEBD0E !important;
         }
 
+        @media (max-width: 1024px) {
+            #mainMenu:not(.menu-overlay) nav>ul>li>a {
+                color: #3d3d3d !important;
+            }
+        }
+
         <?php
 
-        if (is_page( array( 'home', 'layanan', 'kontak', 'profil' ) )) {
+        if (is_page(array('home', 'layanan', 'kontak', 'profil', 'mitra'))) {
             echo '#mainMenu nav ul li a{ color: white!important;}';
         }
         ?>
