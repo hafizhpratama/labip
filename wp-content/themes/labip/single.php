@@ -16,23 +16,22 @@ get_header();
                         <div class="post-item-wrap">
                             <div class="post-image">
                                 <a href="#">
-                                    <?php if (has_post_thumbnail( $post->ID ) ): ?>
-                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+                                    <?php if (has_post_thumbnail($post->ID)) : ?>
+                                        <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail'); ?>
 
-                                    <img alt="" src="<?php echo $image[0]; ?>">
+                                        <img alt="" src="<?php echo $image[0]; ?>">
                                     <?php endif; ?>
                                 </a>
                             </div>
                             <div class="post-item-description">
                                 <h2><?php
-                                            echo get_the_title( $post_id );
-                                            
-                                        ?></h2>
+                                    echo get_the_title($post_id);
+
+                                    ?></h2>
                                 <div class="post-meta">
                                     <span class="post-meta-date"><i class="fa fa-calendar-o"></i>
-                                        <?php echo get_the_date( 'Y-m-d' ); ?> </span>
-                                    <span class="post-meta-comments"><a href=""><i
-                                                class="fa fa-comments-o"></i><?php comments_number(); ?></a></span>
+                                        <?php echo get_the_date('Y-m-d'); ?> </span>
+                                    <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i><?php comments_number(); ?></a></span>
                                     <span class="post-meta-category"><a href=""><i class="fa fa-tag"></i>
                                             <?php the_tags(); ?> </a></span>
                                     <div class="post-meta-share">
@@ -55,14 +54,13 @@ get_header();
                                     </div>
                                 </div>
                                 <?php
-                                            if(have_posts()){
-                                                while(have_posts()){
-                                                    the_post();
-                                                    the_content();
-
-                                                }
-                                            }
-                                        ?>
+                                if (have_posts()) {
+                                    while (have_posts()) {
+                                        the_post();
+                                        the_content();
+                                    }
+                                }
+                                ?>
                             </div>
                             <div class="post-tags">
                                 <a href="#"><?php the_tags(); ?></a>
@@ -88,13 +86,13 @@ get_header();
             </div>
             <!-- end: content -->
             <!-- Sidebar-->
-                <?php get_sidebar();?>
-                <!-- end: Sidebar-->
+            <?php get_sidebar(); ?>
+            <!-- end: Sidebar-->
         </div>
     </div>
 </section>
 <!-- end: Page Content -->
 <!-- Footer -->
 <?php
-    get_footer();
-    ?>
+get_footer();
+?>

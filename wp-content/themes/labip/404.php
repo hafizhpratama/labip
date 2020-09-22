@@ -23,5 +23,5 @@ get_header();
 </section>
 <!-- end:  404 PAGE -->
 <?php
-    get_footer();
-    ?>
+get_footer();
+?>

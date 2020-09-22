@@ -7,18 +7,18 @@
             </a>
         </div>
         <div class="post-item-description">
-            <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo get_the_date( 'Y-m-d' ); ?></span>
+            <span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo get_the_date('Y-m-d'); ?></span>
             <h2><a href="<?php the_permalink(); ?>" class="text-green">
                     <?php
-                                    
-                                    the_title();
 
-                                ?>
+                    the_title();
+
+                    ?>
                 </a></h2>
             <p>
                 <?php
-                                echo the_excerpt();
-                                ?>
+                echo the_excerpt();
+                ?>
         </div>
     </div>
 </div>

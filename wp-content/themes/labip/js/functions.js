@@ -25,7 +25,7 @@ var INSPIRO = {},
     //Logo
     headerLogo = $("#logo"),
     //Menu
-    $mainMenu = $("#mainMenu"),    
+    $mainMenu = $("#mainMenu"),
     $mainMenuTriggerBtn = $("#mainMenu-trigger a, #mainMenu-trigger button"),
     //Slider
     $slider = $("#slider"),
@@ -94,7 +94,7 @@ var INSPIRO = {},
   });
 
 
-  $(window).bind("breakpoint-change", function(event) {
+  $(window).bind("breakpoint-change", function (event) {
     $(window).breakpoints("greaterEqualTo", "lg", function () {
       $body.addClass("b--desktop");
       $body.removeClass("b--responsive");
@@ -106,7 +106,7 @@ var INSPIRO = {},
   });
 
 
-  
+
   INSPIRO.core = {
     functions: function () {
       INSPIRO.core.scrollTop()
@@ -225,7 +225,7 @@ var INSPIRO = {},
         defaultDark = $body.hasClass("dark");
 
       if (typeof Cookies.get(darkColorScheme) !== "undefined") {
-       // $body.addClass("dark");
+        // $body.addClass("dark");
       }
 
 
@@ -426,7 +426,7 @@ var INSPIRO = {},
                 if (Settings.submenuLight && Settings.headerHasDarkClass) {
                   $header.removeClass("dark");
                   Settings.headerDarkClassRemoved = true;
-                }else {
+                } else {
                   if (Settings.headerHasDarkClass && Settings.headerDarkClassRemoved) {
                     $header.addClass("dark");
                   }
@@ -488,27 +488,27 @@ var INSPIRO = {},
           })
         });
 
-        $menuItemLinks.on("click", function(e) {
+        $menuItemLinks.on("click", function (e) {
           $(this).parent("li").siblings().removeClass("hover-active");
-          if($body.hasClass("b--responsive") || $mainMenu.hasClass("menu-onclick") ) {
-              $(this).parent("li").toggleClass("hover-active");
+          if ($body.hasClass("b--responsive") || $mainMenu.hasClass("menu-onclick")) {
+            $(this).parent("li").toggleClass("hover-active");
           }
           e.stopPropagation();
           e.preventDefault();
         });
 
-        $body.on("click", function(e) {
+        $body.on("click", function (e) {
           $mainMenu.find(".hover-active").removeClass("hover-active");
         });
 
-        $(window).on('resize', function(){
-          if($body.hasClass("mainMenu-open")){
+        $(window).on('resize', function () {
+          if ($body.hasClass("mainMenu-open")) {
             if (Settings.menuIsOpen) {
               $mainMenuTriggerBtn.trigger("click");
               $mainMenu.find(".hover-active").removeClass("hover-active");
             }
           }
-      }); 
+        });
 
 
         /*invert menu fix*/
@@ -526,11 +526,11 @@ var INSPIRO = {},
             }
           })
 
-          if($menuLastItemUl.length > 0) {
-          if ($window.width() - ($menuLastItemUl.width() + $menuLastItem.offset().left) < 0 ) {
-            $menuLastItemUl.addClass("menu-last");
+          if ($menuLastItemUl.length > 0) {
+            if ($window.width() - ($menuLastItemUl.width() + $menuLastItem.offset().left) < 0) {
+              $menuLastItemUl.addClass("menu-last");
+            }
           }
-        }
           $menuItems.css("display", "");
         })
       }
@@ -740,7 +740,7 @@ var INSPIRO = {},
             responsiveHeightXs = elem.attr("data-height-xs"),
             containerFullscreen = elem.find(".container").first().outerHeight(),
             contentCrop;
-            
+
           if (containerFullscreen >= windowHeight) {
             contentCrop = true;
             var sliderMinHeight = containerFullscreen;
@@ -834,7 +834,7 @@ var INSPIRO = {},
           }
 
           sliderHeight(elem);
-          
+
           var inspiroSliderData = elem.flickity({
             cellSelector: elem.options.cellSelector,
             prevNextButtons: elem.options.prevNextButtons,
@@ -916,7 +916,7 @@ var INSPIRO = {},
     },
     carouselAjax: function () {
       INSPIRO.slider.carousel($(".carousel"));
-     },
+    },
     carousel: function (elem) {
       if (elem) {
         $carousel = elem;
@@ -1100,7 +1100,7 @@ var INSPIRO = {},
       INSPIRO.elements.animations();
       INSPIRO.elements.parallax();
       INSPIRO.elements.backgroundImage();
-      INSPIRO.elements.responsiveVideos();
+      //   INSPIRO.elements.responsiveVideos();
       INSPIRO.elements.countdownTimer();
       INSPIRO.elements.progressBar();
       INSPIRO.elements.pieChart();
@@ -1175,7 +1175,7 @@ var INSPIRO = {},
       if ($ajaxForm.length > 0) {
         $ajaxForm.each(function () {
           var elem = $(this),
-             elemCustomRedirectPage = elem.attr("data-success-page");
+            elemCustomRedirectPage = elem.attr("data-success-page");
           var button = elem.find("button#form-submit"),
             buttonText = button.html();
 
@@ -1193,12 +1193,12 @@ var INSPIRO = {},
               false
             )
           });
-          
+
           elem.submit(function (event) {
             event.preventDefault();
             var post_url = $(this).attr("action");
             var request_method = $(this).attr("method");
-            
+
             if (elem[0].checkValidity() === false) {
               event.stopPropagation()
               elem.addClass("was-validated")
@@ -1207,7 +1207,7 @@ var INSPIRO = {},
               button.html('<i class="icon-loader fa-spin"> </i> Sending...')
               $.ajax({
                 url: post_url,
-                type: request_method,   
+                type: request_method,
                 data: new FormData(this),
                 cache: false,
                 contentType: false,
@@ -1650,17 +1650,17 @@ var INSPIRO = {},
         elem.append(svg)
       })
     },
-    responsiveVideos: function () {
-      //selecting elements
-      var selectors = ['iframe[src*="player.vimeo.com"]', 'iframe[src*="youtube.com"]', 'iframe[src*="youtube-nocookie.com"]', 'iframe[src*="kickstarter.com"][src*="video.html"]', "object", "embed"]
-      var videoContainers = $("section, .content, .post-content, .video-js, .post-video, .video-wrap, .ajax-quick-view,#slider:not(.revslider-wrap)")
-      var elem = videoContainers.find(selectors.join(","))
-      if (elem) {
-        elem.each(function () {
-          $(this).wrap('<div class="embed-responsive embed-responsive-16by9"></div>')
-        })
-      }
-    },
+    // responsiveVideos: function () {
+    //   //selecting elements
+    //   var selectors = ['iframe[src*="player.vimeo.com"]', 'iframe[src*="youtube.com"]', 'iframe[src*="youtube-nocookie.com"]', 'iframe[src*="kickstarter.com"][src*="video.html"]', "object", "embed"]
+    //   var videoContainers = $("section, .content, .post-content, .video-js, .post-video, .video-wrap, .ajax-quick-view,#slider:not(.revslider-wrap)")
+    //   var elem = videoContainers.find(selectors.join(","))
+    //   if (elem) {
+    //     elem.each(function () {
+    //       $(this).wrap('<div class="embed-responsive embed-responsive-16by9"></div>')
+    //     })
+    //   }
+    // },
     counters: function () {
       var $counter = $(".counter")
       if ($counter.length > 0) {
@@ -1779,31 +1779,31 @@ var INSPIRO = {},
             "line-height": elem.options.size + "px"
           })
           //Initializing jQuery easyPieChart plugin and passing the options
-          
-          setTimeout(function() {
-          new Waypoint({
-            element: elem,
-            handler: function () {
-              elem.easyPieChart({
-                barColor: elem.options.barColor,
-                trackColor: elem.options.trackColor,
-                scaleColor: elem.options.scaleColor,
-                scaleLength: elem.options.scaleLength,
-                lineCap: elem.options.lineCap,
-                lineWidth: Number(elem.options.lineWidth),
-                size: Number(elem.options.size),
-                rotate: Number(elem.options.rotate),
-                animate: Number(elem.options.animate),
-                elemEasing: elem.options.elemEasing,
-                onStep: function (from, to, percent) {
-                  elem.find("span.percent").text(Math.round(percent))
-                }
-              })
-              this.destroy()
-            },
-            offset: "100%"
-          })
-        }, 200);
+
+          setTimeout(function () {
+            new Waypoint({
+              element: elem,
+              handler: function () {
+                elem.easyPieChart({
+                  barColor: elem.options.barColor,
+                  trackColor: elem.options.trackColor,
+                  scaleColor: elem.options.scaleColor,
+                  scaleLength: elem.options.scaleLength,
+                  lineCap: elem.options.lineCap,
+                  lineWidth: Number(elem.options.lineWidth),
+                  size: Number(elem.options.size),
+                  rotate: Number(elem.options.rotate),
+                  animate: Number(elem.options.animate),
+                  elemEasing: elem.options.elemEasing,
+                  onStep: function (from, to, percent) {
+                    elem.find("span.percent").text(Math.round(percent))
+                  }
+                })
+                this.destroy()
+              },
+              offset: "100%"
+            })
+          }, 200);
         })
       }
     },
@@ -2158,15 +2158,15 @@ var INSPIRO = {},
                 this.st.mainClass = "mfp-zoom-out"
               },
               open: function () {
-                  if ($(this.content).find("video").length > 0) {
-                    $(this.content).find("video").get(0).play();
-                  }
+                if ($(this.content).find("video").length > 0) {
+                  $(this.content).find("video").get(0).play();
+                }
               },
               close: function () {
-                 if ($(this.content).find("video").length > 0) {
+                if ($(this.content).find("video").length > 0) {
                   $(this.content).find("video").get(0).load();
                 }
-              }           
+              }
             },
             fixedContentPos: true,
             overflowY: "scroll"
@@ -2370,13 +2370,13 @@ var INSPIRO = {},
                         if ($(this.content).find("video").length > 0) {
                           $(this.content).find("video").get(0).play();
                         }
-                        
-                    },
-                    close: function () {
-                       if ($(this.content).find("video").length > 0) {
-                        $(this.content).find("video").get(0).load();
+
+                      },
+                      close: function () {
+                        if ($(this.content).find("video").length > 0) {
+                          $(this.content).find("video").get(0).load();
+                        }
                       }
-                    }
                     }
                   },
                   0
@@ -2410,7 +2410,7 @@ var INSPIRO = {},
                             cookieNotify.removeClass(modalShowClass);
                             return false
                           });
-                      },
+                        },
                         close: function () {
                           if ($(this.content).find("video").length > 0) {
                             $(this.content).find("video").get(0).load();
@@ -2825,23 +2825,23 @@ var INSPIRO = {},
           jQuery.fn.spectragram.accessData = {
             accessToken: instagramAccessToken
           };
-          
+
           elem.find($(instagramItems)).spectragram({
-            complete : myCallbackFunc(),
+            complete: myCallbackFunc(),
             max: instagramLimit,
             size: instagramSize,
             wrapEachWith: "",
           });
 
-          function myCallbackFunc(){
+          function myCallbackFunc() {
             elem.addClass("widget-instagram-loaded")
-              setTimeout(function () {
-                if (elem.parents(".grid-layout").length > 0) {
-                  elem.parents(".grid-layout").isotope("layout")
-                }
-              }, 100);
+            setTimeout(function () {
+              if (elem.parents(".grid-layout").length > 0) {
+                elem.parents(".grid-layout").isotope("layout")
+              }
+            }, 100);
           }
-      });
+        });
       }
     },
     subscribeForm: function () {
