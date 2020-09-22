@@ -30,7 +30,7 @@
 
         <?php
 
-        if (is_page(array('home', 'layanan', 'kontak', 'profil', 'mitra'))) {
+        if (is_page(array('home', 'layanan', 'kontak', 'profil', 'mitra', 'perangkat-desa'))) {
             echo '#mainMenu nav ul li a{ color: white!important;}';
         }
         ?>
