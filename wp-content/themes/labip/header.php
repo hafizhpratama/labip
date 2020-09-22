@@ -24,10 +24,9 @@
 
         <?php
 
-        if (is_page('home')) {
+        if (is_page( array( 'home', 'layanan', 'kontak', 'profil' ) )) {
             echo '#mainMenu nav ul li a{ color: white!important;}';
         }
-
         ?>
     </style>
     <?php
