@@ -55,7 +55,7 @@ get_header();
     </div>
 </section>
 <!-- END WHAT WE DO -->
-<!-- PORTFOLIO -->
+<!-- Layanan -->
 <section>
     <div class="container">
         <div class="heading-text heading-section">

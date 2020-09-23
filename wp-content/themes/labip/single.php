@@ -34,7 +34,7 @@ get_header();
                                     <span class="post-meta-category"><a href=""><i class="fa fa-tag"></i>
                                             <?php the_tags(); ?> </a></span>
                                     <div class="post-meta-share">
-                                        <a class="btn btn-xs btn-slide btn-facebook" href="#">
+                                        <a class="btn btn-xs btn-slide btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=#<?php echo home_url($wp->request) ?>">
                                             <i class="fab fa-facebook-f"></i>
                                             <span>Facebook</span>
                                         </a>
@@ -65,19 +65,16 @@ get_header();
                                 <a href="#"><?php the_tags(); ?></a>
                             </div>
                             <div class="post-navigation">
-                                <!-- <a href="blog-single-slider.html" class="post-prev"> -->
-                                <div class="post-next-title post-prev"><span>Next
-                                        Post</span><?php previous_post_link(); ?></div>
-                                <!-- </a> -->
-                                <a href="blog-masonry-3.html" class="post-all">
+                                <a href="<?php echo get_previous_posts_link(); ?>" class="post-prev">
+                                    <div class="post-prev-title"><span>Previous Post</span><?php echo get_the_title(get_previous_post()) ?></div>
+                                </a>
+                                <a href="" class="post-all">
                                     <i class="icon-grid"> </i>
                                 </a>
-                                <!-- <a href="blog-single-video.html" class="post-next"> -->
-                                <div class="post-next-title post-next"><span>Next Post</span><?php next_post_link(); ?>
-                                </div>
-                                <!-- </a> -->
+                                <a href="<?php echo get_next_posts_link(); ?>" class="post-next">
+                                    <div class="post-next-title"><span>Next Post</span><?php echo get_the_title(get_next_post()) ?></div>
+                                </a>
                             </div>
-
                         </div>
                     </div>
                     <!-- end: Post single item-->

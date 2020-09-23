@@ -14,7 +14,9 @@ get_header();
                 <!-- end: Page title -->
                 <!-- Blog -->
                 <?php the_berita_all() ?>
-                <?php wp_pagenavi(); ?>
+                <div class="row justify-content-center mb-5">
+                    <?php wp_pagenavi(); ?>
+                </div>
             </div>
             <?php get_sidebar(); ?>
         </div>

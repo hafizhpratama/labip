@@ -19,7 +19,7 @@ http://wordpress.org/extend/plugins/wp-pagenavi/
 
 .wp-pagenavi a:hover,
 .wp-pagenavi span.current {
-  background: #065B81;
+  background: #FEBD0E;
   color: #fff !important;
   border: none
 }
