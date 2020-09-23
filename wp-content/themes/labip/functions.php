@@ -350,9 +350,7 @@ function the_berita()
 
 
 		<?php endwhile; ?>
-
-
-	<?php endif; ?>
+		<?php endif; ?>
 <?php
 }
 
@@ -362,9 +360,11 @@ function the_berita_all()
 	<!-- Blog -->
 	<div id="blog" class="grid-layout post-2-columns m-b-30" data-item="post-item">
 		<?php
+		$paged = get_query_var('paged');
 		$args = array(
 			'post_type' => 'post',
-			'posts_per_page' => 999999
+			'posts_per_page' => 4,
+			'paged' => $paged
 		);
 		$_posts =  new WP_Query($args);
 		?>
@@ -391,9 +391,9 @@ function the_berita_all()
 						</div>
 					</div>
 				</div>
-			<?php endwhile; ?>
-		<?php endif; ?>
-	</div>
+				<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
 <?php
 }
 

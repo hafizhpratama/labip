@@ -14,6 +14,7 @@ get_header();
                 <!-- end: Page title -->
                 <!-- Blog -->
                 <?php the_berita_all() ?>
+                <?php wp_pagenavi(); ?>
             </div>
             <?php get_sidebar(); ?>
         </div>
