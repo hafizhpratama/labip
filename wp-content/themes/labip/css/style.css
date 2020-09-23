@@ -1,22 +1,11 @@
 @charset "UTF-8";
-/*  Mixins */
+
 /*  Fonts */
 /* --------------------------------------------------------------- 
    Google Fonts
 -----------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,400,500,600,700,800|Nunito:300,400,600,700,800");
-/*  Base */
-/***********************************************************************
-**														              **
-**         POLO Html5 Template		   								  **
-**         Author: INSPIRO MEDIA								      **
-**		   URL: //www.inspiro-media.com						  **
-**	       													              **
-************************************************************************/
-/*  Content & Layout */
-/* ----------------------------------------------------------------
-    BODY
------------------------------------------------------------------*/
+
 
 /* 
 Theme Name: Lab IP
@@ -71,6 +60,11 @@ body .container-wide {
 
 .background-red{
   background-color: #B0272B;
+}
+
+h4:not(:last-child), .h4:not(:last-child) {
+  color: #065139;
+  margin-bottom: 8px;
 }
 
 @media (max-width: 1024px) {
@@ -8101,7 +8095,7 @@ Play Button
   top: -6px;
 }
 .lines, .lines:before, .lines:after {
-  background-color: #111;
+  background-color: #fff;
 }
 
 .toggle-active .lines {
@@ -17023,7 +17017,7 @@ a.list-group-item.active:hover, a.list-group-item.active.active {
   right: 25px;
   text-align: right;
 }
-/* .post-navigation .post-next:before {
+.post-navigation .post-next:before {
   content: "\e930";
   font-family: "inspiro-icons";
   font-size: 20px;
@@ -17033,14 +17027,14 @@ a.list-group-item.active:hover, a.list-group-item.active.active {
   transition: all 0.3s ease;
   right: 10px;
   padding-top: 2px;
-} */
+}
 .post-navigation .post-next:hover:before {
   transform: translate3d(5px, -50%, 0);
 }
 .post-navigation .post-prev {
   left: 25px;
 }
-/* .post-navigation .post-prev:before {
+.post-navigation .post-prev:before {
   content: "\e92f";
   font-family: "inspiro-icons";
   font-size: 20px;
@@ -17050,7 +17044,7 @@ a.list-group-item.active:hover, a.list-group-item.active.active {
   transition: all 0.3s ease;
   padding-top: 2px;
   left: 10px;
-} */
+}
 .post-navigation .post-prev:hover:before {
   transform: translate3d(-5px, -50%, 0);
 }
