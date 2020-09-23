@@ -29,8 +29,7 @@ get_header();
 
                                     ?></h2>
                                 <div class="post-meta">
-                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>
-                                        <?php echo get_the_date('Y-m-d'); ?> </span>
+                                    <span class="post-meta-date"><i class="fas fa-calendar-alt"> </i><?php echo get_the_date(); ?></span>
                                     <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i><?php comments_number(); ?></a></span>
                                     <span class="post-meta-category"><a href=""><i class="fa fa-tag"></i>
                                             <?php the_tags(); ?> </a></span>

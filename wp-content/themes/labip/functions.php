@@ -271,9 +271,9 @@ function the_mitra()
 	$the_query = null;
 	$the_query = new WP_Query();
 	$the_query->query($args);
-	while ($the_query->have_posts()) : $the_query->the_post();
 	?>
-		<div class="carousel" data-items="3" data-dots="false" data-lightbox="gallery">
+	<div class="carousel" data-items="3" data-dots="false" data-lightbox="gallery">
+		<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 			<!-- portfolio item -->
 			<div class="portfolio-item img-zoom ct-photography ct-media ct-branding ct-Media">
 				<div class="portfolio-item-wrap">
@@ -295,11 +295,12 @@ function the_mitra()
 					</div>
 				</div>
 			</div>
-			<!-- end: portfolio item -->
-			<!--Gallery Carousel -->
-		</div>
-	<?php endwhile;
-	$the_query = null;
+		<?php endwhile; ?>
+		<!-- end: portfolio item -->
+		<!--Gallery Carousel -->
+	</div>
+
+	<?php $the_query = null;
 	wp_reset_query(); ?>
 <?php
 }
@@ -333,7 +334,7 @@ function the_berita()
 						</a>
 					</div>
 					<div class="post-item-description">
-						<span class="post-meta-date"><i class="fa fa-calendar-o"></i><?php echo get_the_date('Y-m-d'); ?></span>
+						<span class="post-meta-date"><i class="fas fa-calendar-alt"> </i><?php echo get_the_date(); ?></span>
 						<h2><a href="<?php the_permalink(); ?>" class="text-green">
 								<?php
 
@@ -354,6 +355,47 @@ function the_berita()
 
 
 	<?php endif; ?>
+<?php
+}
+
+function the_berita_all()
+{
+?>
+	<!-- Blog -->
+	<div id="blog" class="grid-layout post-2-columns m-b-30" data-item="post-item">
+		<?php
+		$args = array(
+			'post_type' => 'post',
+			'posts_per_page' => 999999
+		);
+		$_posts =  new WP_Query($args);
+		?>
+		<?php if ($_posts->have_posts()) : ?>
+			<?php while ($_posts->have_posts()) : $_posts->the_post(); ?>
+				<div class="post-item border">
+					<div class="post-item-wrap">
+						<div class="post-image">
+							<a href="#">
+								<img alt="" src="<?php the_post_thumbnail_url(); ?>">
+							</a>
+						</div>
+						<div class="post-item-description">
+							<span class="post-meta-date"><i class="fas fa-calendar-alt"> </i><?php echo get_the_date(); ?></span>
+							<h2><a href="<?php the_permalink(); ?>" class="text-green">
+									<?php
+									the_title();
+									?>
+								</a></h2>
+							<p>
+								<?php
+								echo the_excerpt();
+								?>
+						</div>
+					</div>
+				</div>
+			<?php endwhile; ?>
+		<?php endif; ?>
+	</div>
 <?php
 }
 ?>

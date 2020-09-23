@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="widget text-center">
-                        <img src="http://localhost/labip/wp-content/themes/labip/images/logo-footer.png" alt="">
+                        <img style="width: 100px;" src="<?php echo get_template_directory_uri(); ?>/images/logo-ip-umy.png" alt="">
                         <div class="widget-title text-white">Laboratorium <br>
                             Ilmu Pemerintahan UMY</div>
                     </div>
