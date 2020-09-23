@@ -4,7 +4,7 @@
 // tn custom excerpt length
 function tn_custom_excerpt_length($length)
 {
-	return 35;
+	return 32;
 }
 add_filter('excerpt_length', 'tn_custom_excerpt_length', 999);
 
@@ -192,10 +192,8 @@ function tjd_latest_post($number, $thumb)
 			}
 			?>
 		</div>
-
 	</div>
 <?php }
-
 
 function create_post_types_mitra()
 {
@@ -398,4 +396,108 @@ function the_berita_all()
 	</div>
 <?php
 }
+
+// Testimoni
+function create_post_types_testimoni()
+{
+	// Slider post type 
+	$label = array(
+		'name' 				=> __('Testimoni', 'tjd-framework'),
+		'singular_name' 	=> __('Testimoni', 'tjd-framework'),
+		'add_new' 			=> _x('Add New', 'Testimoni', 'tjd-framework'),
+		'add_new_item' 		=> __('Add New Testimoni', 'tjd-framework'),
+		'edit_item' 		=> __('Edit Testimoni', 'tjd-framework'),
+		'new_item' 			=> __('New Testimoni', 'tjd-framework'),
+		'view_item' 		=> __('View Testimoni', 'tjd-framework'),
+		'search_items' 		=> __('Search Testimoni', 'tjd-framework'),
+		'not_found' 		=> __('No Testimoni found', 'tjd-framework'),
+		'not_found_in_trash' => __('No Testimoni found in Trash', 'tjd-framework'),
+		'parent_item_colon' => ''
+	);
+	$args = array(
+		'labels' 			=> $label,
+		'description' 		=> __('All Testimoni upload here', 'tjd-framework'),
+		'public' 			=> true,
+		'supports'			=> array('title', 'thumbnail'),
+		'query_var' 		=> true,
+		'rewrite' 			=> array('slug' => 'testimoni-kami'),
+		'menu_icon'			=> 'dashicons-format-status',
+		'show_in_nav_menus' => false,
+		'has_archive' 		=> true,
+		'menu_position' 	=> 20,
+	);
+	register_post_type('testimoni', $args);
+}
+add_action('init', 'create_post_types_testimoni');
+
+// Add taxonomies
+add_action('init', 'create_taxonomies_testimoni');
+
+function create_taxonomies_testimoni()
+{
+	// Mitra taxonomies
+	$testimoni_cats = array(
+		'name' => __('Testimoni Categories', 'tjd-framework'),
+		'singular_name' => __('Testimoni Category', 'tjd-framework'),
+		'search_items' =>  __('Search Testimoni Categories', 'tjd-framework'),
+		'all_items' => __('All Testimonis Categories', 'tjd-framework'),
+		'parent_item' => __('Parent Testimoni Category', 'tjd-framework'),
+		'parent_item_colon' => __('Parent Testimoni Category:', 'tjd-framework'),
+		'edit_item' => __('Edit Testimoni Category', 'tjd-framework'),
+		'update_item' => __('Update Testimoni Category', 'tjd-framework'),
+		'add_new_item' => __('Add New Testimoni Category', 'tjd-framework'),
+		'new_item_name' => __('New Testimoni Category Name', 'tjd-framework'),
+		'choose_from_most_used'	=> __('Choose from the most used Testimoni categories', 'tjd-framework')
+	);
+
+	register_taxonomy('testimoni_cats', 'testimoni', array(
+		'hierarchical' => true,
+		'labels' => $testimoni_cats,
+		'query_var' => true,
+		'rewrite' => array('slug' => 'gambar-testimoni-category'),
+	));
+}
+
+function the_testimoni()
+{
+
+?>
+	<?php
+	$args = array(
+		'post_status'   => 'publish',
+		'post_type'     => 'testimoni',
+		'posts_per_page' => 3,
+	);
+
+	$the_query = null;
+	$the_query = new WP_Query();
+	$the_query->query($args);
+	?>
+	<!-- Testimonials -->
+	<div class="carousel arrows-visibile testimonial testimonial-single testimonial-left" data-items="1" data-autoplay="true" data-loop="true" data-autoplay="3500">
+		<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+			<!-- Testimonials item -->
+			<div class="testimonial-item">
+				<?php
+				if (has_post_thumbnail()) {
+					the_post_thumbnail('thumbnail-square');
+				} else {
+				?>
+					<img src="<?php bloginfo('template_directory'); ?>/images/blog/17.jpg" alt="<?php the_field('nama_testimoni'); ?>">
+				<?php
+				}
+				?>
+				 <p class="text-black" style="font-size: 16px;"><?php the_field('teks_testimoni'); ?></p>
+                    <span class="text-black"><?php the_field('nama_testimoni'); ?></span>
+                    <span class="text-black"><?php the_field('jabatan_testimoni') ?></span>
+				<p class="text-black"></p>
+			</div>
+		<?php endwhile; ?>
+		<!-- end: Testimonials item-->
+	</div>
+	<?php $the_query = null;
+	wp_reset_query(); ?>
+<?php
+}
+
 ?>

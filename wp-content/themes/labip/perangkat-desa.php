@@ -136,36 +136,7 @@ get_header();
             <span class="lead"><?php the_field('pd_deskripsi_testimoni') ?></span>
         </div>
         <!-- Testimonials -->
-        <div class="carousel arrows-visibile testimonial testimonial-single testimonial-left" data-items="1" data-autoplay="true" data-loop="true" data-autoplay="3500">
-            <!-- Testimonials item -->
-            <div class="testimonial-item">
-                <img src="images/Testimoni/images-1-e1553669984436.png" alt="">
-                <p class="text-black">Laboratorium IP UMY adalah laboratorium yang komplit. Karenanya,
-                    Laboratorium IP UMY telah beberapa kali mendampingi pemilihan Pamong Desa</p>
-                <span class="text-black">R. Muh Karmadi</span>
-                <span class="text-black">Ketua Panitia Seleksi Pamong Pemerintah Tawangsari, Pengasih, Kulon
-                    Progo</span>
-            </div>
-            <!-- end: Testimonials item-->
-            <!-- Testimonials item -->
-            <div class="testimonial-item">
-                <img src="images/team/9.jpg" alt="">
-                <p>Polo is by far the most amazing template out there! I literally could not be happier that I
-                    chose to buy this template!</p>
-                <span>Alan Monre</span>
-                <span>CEO, Square Software</span>
-            </div>
-            <!-- end: Testimonials item-->
-            <!-- Testimonials item -->
-            <div class="testimonial-item">
-                <img src="images/team/9.jpg" alt="">
-                <p>The world is a dangerous place to live; not because of the people who are evil, but because
-                    of the people who don't do anything about it.</p>
-                <span>Alan Monre</span>
-                <span>CEO, Square Software</span>
-            </div>
-            <!-- end: Testimonials item-->
-        </div>
+        <?php the_testimoni() ?>
 </section>
 <!-- end: Testimonial -->
 <!--call-to-action dark -->
