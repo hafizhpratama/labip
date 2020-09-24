@@ -6,13 +6,11 @@ get_header();
 <!-- SECTION IMAGE FULLSCREEN -->
 
 <?php
-
 $layanan = get_field('layanan');
 if ($layanan) : ?>
     <?php $i = 1;
     foreach ($layanan as $post) :
     ?>
-
         <div class="row d-flex <?php echo ($i % 2 == 0) ? "flex-row-reverse" : '' ?> " style="top: -80px; position: relative;">
             <div class="col-lg-6 mx-0 px-0">
                 <section class="fullscreen" style="background-image:url(<?php echo get_field('pd_gambar_heading', $post->ID) ?>); background-size: cover; background-position: center center;">
@@ -40,7 +38,6 @@ if ($layanan) : ?>
     <?php $i++;
     endforeach; ?>
     <?php
-    // Reset the global post object so that the rest of the page works correctly.
     wp_reset_postdata(); ?>
 <?php endif; ?>
 <!-- end: SECTION IMAGE FULLSCREEN -->

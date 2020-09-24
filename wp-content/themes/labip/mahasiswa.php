@@ -1,10 +1,7 @@
 <?php /* Template Name: Mahasiswa */ ?>
 <?php
-
 get_header();
-
 ?>
-
 
 <!-- SECTION IMAGE FULLSCREEN -->
 <div class="row" style="top: -80px; position: relative;">
@@ -51,10 +48,32 @@ get_header();
                     </div>
                     <div class="tab-content" id="myTabContent4">
                         <div class="tab-pane fade show active" id="home4" role="tabpanel" aria-labelledby="home-tab">
-                            <p><?php echo get_field('keterangan_layanan_1') ?></p>
+                            <p class="text-red text-bold"><?php echo get_field('deskripsi_layanan') ?></p>
+                            <?php
+                            $layanan = get_field('keterangan_layanan_1');
+                            $layanan2 = get_field('keterangan_layanan_2');
+                            if ($layanan) { ?>
+                                <?php
+                                foreach ($layanan as $post) :
+                                ?>
+                                    <a class="text-black" href="<?php echo get_the_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a><br>
+                                <?php endforeach; ?>
+                                <?php
+                                wp_reset_postdata(); ?>
+                            <?php } ?>
                         </div>
                         <div class="tab-pane fade" id="profile4" role="tabpanel" aria-labelledby="profile-tab">
-                            <p><?php echo get_field('keterangan_layanan_2') ?></p>
+                            <p class="text-red text-bold"><?php echo get_field('deskripsi_layanan') ?></p>
+
+                            <?php if ($layanan2) { ?>
+                                <?php
+                                foreach ($layanan2 as $post2) :
+                                ?>
+                                    <a class="text-black" href="<?php echo get_the_permalink($post2->ID); ?>"><?php echo get_the_title($post2->ID); ?></a><br>
+                                <?php endforeach; ?>
+                                <?php
+                                wp_reset_postdata(); ?>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
