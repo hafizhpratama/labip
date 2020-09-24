@@ -4,70 +4,45 @@
 get_header();
 ?>
 <!-- SECTION IMAGE FULLSCREEN -->
-<div class="row" style="top: -80px; position: relative;">
-    <div class="col-lg-6 mx-0 px-0">
-        <section class="fullscreen" style="background-image:url(<?php echo get_field('mitra_gambar_1') ?>); background-size: cover; background-position: center center;">
-        </section>
-    </div>
 
-    <div class="col-lg-6 mx-0 px-0">
-        <section class="fullscreen background-yellow">
-            <div class="">
-                <div class="col-10 ml-5 mt-5 text-black">
-                    <h2 class="margin-bottom-0">
-                        <?php echo get_field('mitra_judul_1') ?>
-                    </h2>
-                    <p>
-                        <?php echo get_field('mitra_deskripsi_1') ?>
+<?php
 
-                    </p>
-                    <div data-animate="fadeInUp" data-animate-delay="900"></div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="col-lg-6 mx-0 px-0">
-        <section class="fullscreen">
-            <div class="">
-                <div class="col-10 ml-5 mt-5 text-black">
-                    <h2 class="margin-bottom-0">
-                        <?php echo get_field('mitra_judul_2') ?>
-                    </h2>
-                    <p>
-                        <?php echo get_field('mitra_deskripsi_2') ?>
-                    </p>
-                    <div data-animate="fadeInUp" data-animate-delay="900"></div>
-                    <a href="<?php echo get_field('link_button_1') ?> " class="btn background-yellow border-0"><?php echo get_field('mitra_button_1') ?></a>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="col-lg-6 mx-0 px-0">
-        <section class="fullscreen" style="background-image:url(<?php echo get_field('mitra_gambar_2') ?>); background-size: cover; background-position: center center;">
-        </section>
-    </div>
-    <div class="col-lg-6 mx-0 px-0">
-        <section class="fullscreen" style="background-image:url(<?php echo get_field('mitra_gambar_3') ?>); background-size: cover; background-position: center center;">
-        </section>
-    </div>
+$layanan = get_field('layanan');
+if ($layanan) : ?>
+    <?php $i = 1;
+    foreach ($layanan as $post) :
+    ?>
 
-    <div class="col-lg-6 mx-0 px-0">
-        <section class="fullscreen background-yellow">
-            <div class="">
-                <div class="col-10 ml-5 mt-5 text-black">
-                    <h2 class="margin-bottom-0">
-                        <?php echo get_field('mitra_judul_3') ?>
-                    </h2>
-                    <p>
-                        <?php echo get_field('mitra_deskripsi_3') ?>
-                    </p>
-                    <div data-animate="fadeInUp" data-animate-delay="900"></div>
-                    <a href="<?php echo get_field('link_button_1') ?> " class="btn background-black border-0"><?php echo get_field('mitra_button_2') ?></a>
-                </div>
+        <div class="row d-flex <?php echo ($i % 2 == 0) ? "flex-row-reverse" : '' ?> " style="top: -80px; position: relative;">
+            <div class="col-lg-6 mx-0 px-0">
+                <section class="fullscreen" style="background-image:url(<?php echo get_field('pd_gambar_heading', $post->ID) ?>); background-size: cover; background-position: center center;">
+                </section>
             </div>
-        </section>
-    </div>
-</div>
+
+            <div class="col-lg-6 mx-0 px-0">
+                <section class="fullscreen <?php echo ($i % 2 == 0) ? "" : 'background-yellow' ?>">
+                    <div class="">
+                        <div class="col-10 ml-5 mt-5 text-black">
+                            <h2 class="margin-bottom-0">
+                                <?php echo get_the_title($post->ID); ?>
+                            </h2>
+                            <p>
+                                <?php echo get_field('pd_deskripsi_heading', $post->ID); ?>
+                            </p>
+                            <div data-animate="fadeInUp" data-animate-delay="900"></div>
+                            <a href="<?php echo get_the_permalink($post->ID); ?>" class="btn <?php echo ($i % 2 == 0) ? "background-yellow" : 'background-black' ?> border-0">Selengkapnya</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    <?php $i++;
+    endforeach; ?>
+    <?php
+    // Reset the global post object so that the rest of the page works correctly.
+    wp_reset_postdata(); ?>
+<?php endif; ?>
 <!-- end: SECTION IMAGE FULLSCREEN -->
 <!-- Mitra Kami -->
 <section>

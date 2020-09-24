@@ -350,7 +350,9 @@ function the_berita()
 
 
 		<?php endwhile; ?>
-		<?php endif; ?>
+	<?php endif; ?>
+	<?php $_posts = null;
+	wp_reset_query(); ?>
 <?php
 }
 
@@ -391,9 +393,11 @@ function the_berita_all()
 						</div>
 					</div>
 				</div>
-				<?php endwhile; ?>
-				<?php endif; ?>
-			</div>
+			<?php endwhile; ?>
+		<?php endif; ?>
+		<?php $_posts = null;
+		wp_reset_query(); ?>
+	</div>
 <?php
 }
 
@@ -487,15 +491,65 @@ function the_testimoni()
 				<?php
 				}
 				?>
-				 <p class="text-black" style="font-size: 16px;"><?php the_field('teks_testimoni'); ?></p>
-                    <span class="text-black"><?php the_field('nama_testimoni'); ?></span>
-                    <span class="text-black"><?php the_field('jabatan_testimoni') ?></span>
+				<p class="text-black" style="font-size: 16px;"><?php the_field('teks_testimoni'); ?></p>
+				<span class="text-black"><?php the_field('nama_testimoni'); ?></span>
+				<span class="text-black"><?php the_field('jabatan_testimoni') ?></span>
 				<p class="text-black"></p>
 			</div>
 		<?php endwhile; ?>
 		<!-- end: Testimonials item-->
 	</div>
 	<?php $the_query = null;
+	wp_reset_query(); ?>
+<?php
+}
+
+function the_suksesstory()
+{
+?>
+	<?php
+
+	$args = array(
+		'category' => 'sukses-story',
+		'post_type' => 'post',
+		'posts_per_page' => 4
+	);
+
+	$_posts =  new WP_Query($args);
+
+	?>
+
+	<?php if ($_posts->have_posts()) : ?>
+
+
+
+		<!-- Testimonials -->
+		<div class="carousel arrows-visibile testimonial testimonial-single testimonial-left" data-items="1" data-autoplay="true" data-loop="true" data-autoplay="3500">
+			<?php while ($_posts->have_posts()) : $_posts->the_post(); ?>
+
+				<!-- Testimonials item -->
+				<div class="testimonial-item text-white">
+					<div class="row">
+
+						<div class="col-lg-5">
+							<div class="" style="border-radius: 8px; width: 300px; height: 300px; background-image:url(<?php the_post_thumbnail_url(); ?>); background-size: cover; background-position: center center;">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<p class="pt-4"><?php
+								echo the_excerpt();
+								?></p>
+							<a href="<?php echo get_the_permalink()?>" class="btn background-yellow ?> border-0">Selengkapnya</a>
+						</div>
+					</div>
+				</div>
+				<!-- end: Testimonials item-->
+
+			<?php endwhile; ?>
+		</div>
+		<!-- end: Testimonials -->
+	<?php endif; ?>
+	<?php $_posts = null;
 	wp_reset_query(); ?>
 <?php
 }

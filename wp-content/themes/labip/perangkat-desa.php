@@ -44,24 +44,11 @@ get_header();
 <!-- end: Urgensi -->
 <!-- Sukses Story -->
 <section class="background-red">
-    <div class="container">
+    <div class="container pb-5">
         <div class="heading-text heading-section text-white">
             <h2><?php the_field('judul_sukses_story') ?></h2>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-lg-6">
-                <img src="<?php the_field('gambar_sukses_story') ?>" alt="" style="width: 100%; background-size: cover; background-position: center center;">
-            </div>
-            <div class="col-lg-6">
-                <!--Heading text-->
-                <div class="">
-                    <h2 class="text-yellow"><?php the_field('judul_sukses_story_1') ?></h2>
-                    <p class="text-white pb-3"><?php the_field('deskripsi_sukses_story') ?></p>
-                    <a href="<?php the_field('link_button_sukses_story') ?>" class="btn background-yellow border-0"><?php the_field('teks_button_sukses_story') ?></a>
-                </div>
-                <!--end: Heading text-->
-            </div>
-        </div>
+        <?php the_suksesstory() ?>
     </div>
 </section>
 <!-- End: Sukses Story -->
