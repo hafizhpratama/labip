@@ -32,8 +32,16 @@
 
         if (is_page(array('home', 'layanan', 'kontak', 'profil', 'mitra', 'perangkat-desa'))) {
             echo '#mainMenu nav ul li a{ color: white!important;}';
+            echo 'i.icon-search:before{color: white;}';
+        } else{
+            echo '#mainMenu nav ul li a{ color: #3d3d3d!important;}';
+            echo 'i.icon-search:before{color: #3d3d3d;}';
+            echo '.lines, .lines:before, .lines:after { background-color: #3d3d3d!important; }';
         }
         ?>
+        
+
+
     </style>
     <?php
     wp_head();
@@ -63,6 +71,23 @@
 
                     </div>
                     <!--End: Logo-->
+                    <!-- Search -->
+                    <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
+                        <form role="search" id="searchform" class="search-form" action="http://localhost/labip/" method="get">
+                            <input id="s" class="form-control" name="s" type="text" placeholder="Type & Search..." />
+                            <span class="text-muted">Start typing & press "Enter" or "ESC" to close</span>
+                        </form>
+                    </div>
+                    <!-- end: search -->
+                    <!--Header Extras-->
+                    <div class="header-extras">
+                        <ul>
+                            <li>
+                                <a id="btn-search" href="#"> <i class="icon-search"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--end: Header Extras-->
                     <!--Navigation Resposnive Trigger-->
                     <div id="mainMenu-trigger">
                         <a class="lines-button x"><span class="lines"></span></a>

@@ -2,7 +2,6 @@
 <?php
 get_header();
 ?>
-
 <!-- SECTION IMAGE FULLSCREEN -->
 <div class="row" style="top: -80px; position: relative;">
     <div class="col-lg-6 mx-0 px-0">
@@ -27,13 +26,12 @@ get_header();
     </div>
 </div>
 <!-- end: SECTION IMAGE FULLSCREEN -->
-<!-- end: Mitra Kami -->
 <!-- Pilih Layanan -->
 <section>
     <div class="container pt-5">
         <div class="tabs tabs-vertical">
-            <div class="row">
-                <div class="col-3">
+            <div class="row mx-auto">
+                <div class="col-lg-3 pb-3">
                     <ul class="nav flex-column nav-tabs" id="myTab4" role="tablist" aria-orientation="vertical">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home4" role="tab" aria-controls="home" aria-selected="true"><?php echo get_field('jenis_layanan_1') ?></a>
@@ -43,7 +41,7 @@ get_header();
                         </li>
                     </ul>
                 </div>
-                <div class="col-9">
+                <div class="col-lg-9">
                     <div class="tab-content" id="v-pills-tabContent">
                     </div>
                     <div class="tab-content" id="myTabContent4">

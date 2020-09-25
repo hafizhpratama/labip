@@ -68,9 +68,6 @@ get_header();
                                 <a href="<?php echo get_previous_posts_link(); ?>" class="post-prev">
                                     <div class="post-prev-title"><span>Previous Post</span><?php echo get_the_title(get_previous_post()) ?></div>
                                 </a>
-                                <a href="" class="post-all">
-                                    <i class="icon-grid"> </i>
-                                </a>
                                 <a href="<?php echo get_next_posts_link(); ?>" class="post-next">
                                     <div class="post-next-title"><span>Next Post</span><?php echo get_the_title(get_next_post()) ?></div>
                                 </a>
