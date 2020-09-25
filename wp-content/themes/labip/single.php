@@ -65,12 +65,17 @@ get_header();
                                 <a href="#"><?php the_tags(); ?></a>
                             </div>
                             <div class="post-navigation">
-                                <a href="<?php echo get_previous_posts_link(); ?>" class="post-prev">
-                                    <div class="post-prev-title"><span>Previous Post</span><?php echo get_the_title(get_previous_post()) ?></div>
-                                </a>
-                                <a href="<?php echo get_next_posts_link(); ?>" class="post-next">
+                                <?php if(get_previous_post()) {?>
+                                    <a href="<?php echo get_the_permalink(get_previous_post()); ?>" class="post-prev">
+                                        <div class="post-prev-title"><span>Previous Post</span><?php echo get_the_title(get_previous_post()) ?></div>
+                                    </a>
+
+                                <?php } ?>
+                                <?php if(get_next_post()) {?>
+                                <a href="<?php echo get_the_permalink(get_next_post()); ?>" class="post-next">
                                     <div class="post-next-title"><span>Next Post</span><?php echo get_the_title(get_next_post()) ?></div>
                                 </a>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

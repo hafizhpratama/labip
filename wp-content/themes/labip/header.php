@@ -73,7 +73,7 @@
                     <!--End: Logo-->
                     <!-- Search -->
                     <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
-                        <form role="search" id="searchform" class="search-form" action="http://localhost/labip/" method="get">
+                        <form role="search" id="searchform" class="search-form" action="/" method="get">
                             <input id="s" class="form-control" name="s" type="text" placeholder="Type & Search..." />
                             <span class="text-muted">Start typing & press "Enter" or "ESC" to close</span>
                         </form>
