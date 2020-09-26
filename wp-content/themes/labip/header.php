@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="INSPIRO" />
-    <meta name="description" content="Themeforest Template Polo, html template">
+    <meta name="description" content="Lab Ilmu Pemerintahan">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Stylesheets & Fonts -->
     <style>
@@ -73,7 +73,7 @@
                     <!--End: Logo-->
                     <!-- Search -->
                     <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
-                        <form role="search" id="searchform" class="search-form" action="/" method="get">
+                        <form role="search" id="searchform" class="search-form" action="http://localhost/labip/" method="get">
                             <input id="s" class="form-control" name="s" type="text" placeholder="Type & Search..." />
                             <span class="text-muted">Start typing & press "Enter" or "ESC" to close</span>
                         </form>

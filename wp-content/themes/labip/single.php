@@ -24,10 +24,10 @@ get_header();
                                 </a>
                             </div>
                             <div class="post-item-description">
-                                <h2><?php
+                                <h3><?php
                                     echo get_the_title($post_id);
 
-                                    ?></h2>
+                                    ?></h3>
                                 <div class="post-meta">
                                     <span class="post-meta-date"><i class="fas fa-calendar-alt"> </i><?php echo get_the_date(); ?></span>
                                     <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i><?php comments_number(); ?></a></span>

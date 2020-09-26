@@ -46,7 +46,7 @@ get_header();
             <div class="col-2"></div>
             <div class="col-8">
                 <div class="heading-text text-center">
-                    <h2 style="font-size: 30px;"><?php echo get_field('judul_keterangan_1') ?></h2>
+                    <h3><?php echo get_field('judul_keterangan_1') ?></h3>
                     <span class="lead" style="font-size: 20px;"><?php echo get_field('keterangan_1') ?></span>
                 </div>
                 <div class="col-2"></div>
@@ -59,36 +59,36 @@ get_header();
 <section>
     <div class="container">
         <div class="heading-text heading-section">
-            <h2><?php echo get_field('judul_layanan') ?></h2>
+            <h3><?php echo get_field('judul_layanan') ?></h3>
             <span class="lead"><?php echo get_field('keterangan_layanan') ?></span>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <?php echo get_field('layanan_1') ?>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <?php echo get_field('layanan_2') ?>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <?php echo get_field('layanan_3') ?>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <?php echo get_field('layanan_4') ?>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <?php echo get_field('layanan_5') ?>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <?php echo get_field('layanan_6') ?>
                 </div>
@@ -101,7 +101,7 @@ get_header();
 <section>
     <div class="container">
         <div class="heading-text heading-section">
-            <h2><?php echo get_field('judul_mitra') ?></h2>
+            <h3><?php echo get_field('judul_mitra') ?></h3>
             <span class="lead"><?php echo get_field('keterangan_mitra') ?></span>
         </div>
         <!--Gallery Carousel -->
@@ -117,7 +117,7 @@ get_header();
 <section class="content">
     <div class="container">
         <div class="heading-text heading-section">
-            <h2><?php echo get_field('judul_judul_berita') ?></h2>
+            <h3><?php echo get_field('judul_judul_berita') ?></h3>
         </div>
         <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
         <?php the_berita(); ?>

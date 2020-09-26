@@ -8,8 +8,8 @@ get_header();
             <div class=" col-lg-9">
                 <!-- post content -->
                 <!-- Page title -->
-                <div class="page-title">
-                    <h1>Berita</h1>
+                <div class="heading-text heading-section">
+                    <h3>Berita</h3>
                 </div>
                 <!-- end: Page title -->
                 <!-- Blog -->

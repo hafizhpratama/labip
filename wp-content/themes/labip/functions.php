@@ -4,7 +4,7 @@
 // tn custom excerpt length
 function tn_custom_excerpt_length($length)
 {
-	return 32;
+	return 24;
 }
 add_filter('excerpt_length', 'tn_custom_excerpt_length', 999);
 
@@ -510,7 +510,7 @@ function the_suksesstory()
 	<?php
 
 	$args = array(
-		'category' => 'sukses-story',
+		'category_name' => 'sukses-story',
 		'post_type' => 'post',
 		'posts_per_page' => 4
 	);
@@ -536,7 +536,8 @@ function the_suksesstory()
 							</div>
 						</div>
 						<div class="col-lg-6">
-							<p class="pt-4"><?php
+							<h3 style="color: #FFB848!important;"><?php the_title() ?></h3>
+							<p><?php
 								echo the_excerpt();
 								?></p>
 							<a href="<?php echo get_the_permalink()?>" class="btn background-yellow ?> border-0">Selengkapnya</a>

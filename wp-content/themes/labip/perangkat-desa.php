@@ -30,7 +30,7 @@ get_header();
 <section>
     <div class="container">
         <div class="heading-text heading-section">
-            <h2><?php the_field('judul_urgensi') ?></h2>
+            <h3><?php the_field('judul_urgensi') ?></h3>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -46,7 +46,7 @@ get_header();
 <section class="background-red">
     <div class="container pb-5">
         <div class="heading-text heading-section text-white">
-            <h2><?php the_field('judul_sukses_story') ?></h2>
+            <h3><?php the_field('judul_sukses_story') ?></h3>
         </div>
         <?php the_suksesstory() ?>
     </div>
@@ -56,40 +56,40 @@ get_header();
 <section class="background-green">
     <div class="container">
         <div class="heading-text heading-section text-white">
-            <h2><?php the_field('judul_mengapa_kami') ?></h2>
+            <h3><?php the_field('judul_mengapa_kami') ?></h3>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <h4 class="text-yellow"><?php the_field('judul_mengapa_kami_1') ?></h4>
                     <p class="text-white"><?php the_field('deskripsi_mengapa_kami_1') ?></p>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <h4 class="text-yellow"><?php the_field('judul_mengapa_kami_2') ?></h4>
                     <p class="text-white"><?php the_field('deskripsi_mengapa_kami_2') ?></p>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <h4 class="text-yellow"><?php the_field('judul_mengapa_kami_3') ?></h4>
                     <p class="text-white"><?php the_field('deskripsi_mengapa_kami_3') ?></p>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <h4 class="text-yellow"><?php the_field('judul_mengapa_kami_4') ?></h4>
                     <p class="text-white"><?php the_field('deskripsi_mengapa_kami_4') ?></p>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <h4 class="text-yellow"><?php the_field('judul_mengapa_kami_5') ?></h4>
                     <p class="text-white"><?php the_field('deskripsi_mengapa_kami_5') ?></p>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5">
                 <div data-animate="fadeInUp" data-animate-delay="0">
                     <h4 class="text-yellow"><?php the_field('judul_mengapa_kami_6') ?></h4>
                     <p class="text-white"><?php the_field('deskripsi_mengapa_kami_6') ?></p>
@@ -103,7 +103,7 @@ get_header();
 <section>
     <div class="container">
         <div class="heading-text heading-section">
-            <h2><?php echo get_field('pd_judul_mitra') ?></h2>
+            <h3><?php echo get_field('pd_judul_mitra') ?></h3>
             <span class="lead"><?php echo get_field('pd_deskripsi_mitra') ?></span>
         </div>
         <!--Gallery Carousel -->
@@ -117,9 +117,9 @@ get_header();
 <!-- end: Mitra Kami -->
 <!-- Testimonial Carousel -->
 <section class="background-yellow">
-    <div class="container">
+    <div class="container pb-5">
         <div class="heading-text heading-section">
-            <h2><?php the_field('pd_judul_testimoni') ?></h2>
+            <h3><?php the_field('pd_judul_testimoni') ?></h3>
             <span class="lead"><?php the_field('pd_deskripsi_testimoni') ?></span>
         </div>
         <!-- Testimonials -->
@@ -148,7 +148,7 @@ get_header();
 <section class="content">
     <div class="container">
         <div class="heading-text heading-section">
-            <h2><?php the_field('pd_judul_berita') ?></h2>
+            <h3><?php the_field('pd_judul_berita') ?></h3>
         </div>
         <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
             <?php the_berita(); ?>

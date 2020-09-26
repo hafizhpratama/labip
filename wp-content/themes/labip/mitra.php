@@ -45,9 +45,9 @@ if ($layanan) : ?>
 <section>
     <div class="container">
         <div class="heading-text heading-section">
-            <h2>
+            <h3>
                 <?php echo get_field('judul_mitra') ?>
-            </h2>
+            </h3>
             <span class="lead">
                 <?php echo get_field('keterangan_mitra') ?>
             </span>
@@ -61,9 +61,9 @@ if ($layanan) : ?>
     <section class="background-yellow">
         <div class="container">
             <div class="heading-text heading-section">
-                <h2>
+                <h3>
                     <?php the_field('mitra_judul_testimoni') ?>
-                </h2>
+                </h3>
                 <span class="lead"><?php the_field('mitra_deskripsi_testimoni') ?></span>
             </div>
             <!-- Testimonials -->
@@ -75,9 +75,9 @@ if ($layanan) : ?>
 <section class="content">
     <div class="container">
         <div class="heading-text heading-section">
-            <h2>
+            <h3>
                 <?php the_field('mitra_judul_berita') ?>
-            </h2>
+            </h3>
         </div>
         <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
             <?php the_berita(); ?>
